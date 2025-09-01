@@ -5,12 +5,18 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Background</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Background • Laura Balbi</title>
+  <meta content="Brief introduction, academic background, and curriculum vitae of Laura Balbi." name="description">
+  <meta content="Laura Balbi, Background, Academic, CV, LiSeDa, LASIGE, FCUL" name="keywords">
+
+  <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -18,114 +24,163 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Page-specific minimal styling -->
+  <style>
+    :root { --accent: #0d6efd; }
+    #header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.05); }
+    .breadcrumbs { padding-top: 6.25rem; padding-bottom: .25rem; background: linear-gradient(180deg, rgba(13,110,253,0.04), rgba(13,110,253,0)); }
+    .section-title h2 { font-weight: 700; }
+
+    .headshot { max-width: 240px; border-radius: 1rem; box-shadow: 0 8px 22px rgba(0,0,0,.10); }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 1.25rem; }
+    .timeline::before { content: ""; position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: rgba(13,110,253,.25); border-radius: 1px; }
+    .tl-item { position: relative; padding-left: 1.25rem; margin-bottom: 1rem; }
+    .tl-item::before { content: ""; position: absolute; left: 5px; top: .35rem; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid var(--accent); }
+    .tl-title { margin: 0; font-weight: 600; }
+    .tl-meta { margin: 0; font-size: .9rem; color: #6c757d; }
+
+    .cv-card { border: 0; border-radius: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,.06); padding: 1.25rem; background: #fff; }
+  </style>
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
 
-      <div class="logo me-auto">
-        <a href="https://ciencias.ulisboa.pt/en"><img src="assets/img/logos/fcul.png" alt="" class="img-fluid" style="width:100px"></a>
-        <a href="https://www.lasige.pt/"><img src="assets/img/logos/lasige.jpg" alt="" class="img-fluid" style="width:90px"></a>
-        &emsp;
-        <a href="index"><img src="assets/img/logos/liseda_blue_whiteBK.png" alt="" class="img-fluid" style="width:60px" ></a>
+      <div class="logo d-flex align-items-center gap-2">
+        <a href="https://ciencias.ulisboa.pt/en" aria-label="FCUL website"><img src="assets/img/logos/fcul.png" alt="FCUL" class="img-fluid" style="width:90px"></a>
+        <a href="https://www.lasige.pt/" aria-label="LASIGE website"><img src="assets/img/logos/lasige.jpg" alt="LASIGE" class="img-fluid" style="width:80px"></a>
+        <a href="index" aria-label="LiSeDa home"><img src="assets/img/logos/liseda_blue_whiteBK.png" alt="LiSeDa" class="img-fluid" style="width:50px"></a>
       </div>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="index">Home</a></li>
-          <li><a class="nav-link scrollto" href="team">Background</a></li>
+          <li><a class="nav-link scrollto" href="index">Home</a></li>
+          <li><a class="nav-link scrollto active" href="team">Background</a></li>
           <li><a class="nav-link scrollto" href="projects">Projects</a></li>
-          <li><a class="nav-link scrollto " href="publications">Publications</a></li>
-
+          <li><a class="nav-link scrollto" href="publications">Publications</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+        <i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
+      </nav>
 
       <div class="header-social-links d-flex align-items-center">
-        <a href="https://github.com/lbalbi" class="github"><i class="bi bi-github"></i></i></a>
+        <a href="https://github.com/lbalbi" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
       </div>
     </div>
   </header><!-- End Header -->
+
   <main id="main">
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Background</h2>
-          <ol>
+          <h2 class="mb-0">Background</h2>
+          <ol class="mb-0">
             <li><a href="index.html">Home</a></li>
             <li>Background</li>
           </ol>
         </div>
-
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
+    <!-- ======= Brief Introduction ======= -->
+    <section id="intro" class="py-4 py-md-5">
       <div class="container">
-        <div class="row justify-content-center"> <!-- start row -->
-            <div class="col-1 d-flex column w-100">
-              <div class="member">
-                <img src="assets/img/people/Laura_Balbi.png" alt="" style="width:190px" >
-                
-                <h3> Get to know me! </h3>
-                <p>&nbsp;</p>
-
-                <tr>
-                  <td>
-                <a> I am currently a first-year PhD Student researcher at LiSeDa, Lisbon Semantics Data Lab at the LASIGE Research Unit 
-                of the Faculty of Sciences of the University of Lisbon.
-                  
-                My current research work delves into the implications of Knowledge Graphs with contradictions and ambiguous entity representations and on KGRL approaches
-                that model them explicitly. </a>
-                  </td>
-                </tr>
-                <p>&nbsp;</p>
-                <tr>
-                <td>  
-                <a>
-                In parallel I have, until recently, integrated the EU-funded project “KATY - Knowledge At the Tip of Your fingers: Clinical Knowledge for Humanity”.
-                The objectives I directly worked in within the project saw the conception of a Knowledge Graph that
-                incorporates and links clinical data from kidney cancer patients with multi-domain biomedical knowledge
-                from several ontologies and public data sources. The conception of such a multi-disciplinary clinical graph
-                unlocked potential for integration of AI for solving prediction tasks that can aid in novelty drug development
-                and personalized medicine.
-                </a>
-                </tr>
-                </td>
-
-                <p>&nbsp;</p>
-                
-              </div>
-            </div>
-          </div> <!--end row -->
-        </div>
-      </section><!-- End Team Section -->
-
-      <!-- ======= Footer ======= -->
-      <footer id="footer">
-        <div class="container d-md-flex py-4">
-          <div class="social-links text-center text-md-right pt-3 pt-md-0">
-            <a href="https://github.com/lbalbi" class="github"><i class="bx bxl-github"></i></a>
+        <div class="section-title mb-3"><h2>Brief Introduction</h2></div>
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-md-4 text-center">
+            <img src="assets/img/people/Laura_Balbi.png" alt="Portrait of Laura Balbi" class="headshot img-fluid">
+          </div>
+          <div class="col-12 col-md-8">
+            <p>
+              I am a first‑year PhD student researcher at <strong>LiSeDa</strong>, the Lisbon Semantic Data Lab, within the <strong>LASIGE</strong> Research Unit at the <strong>Faculty of Sciences</strong>, <strong>University of Lisbon</strong>.
+            </p>
+            <p>
+              My current work investigates the implications of <em>knowledge graphs</em> that include contradictions and ambiguous entity representations, and explores <em>knowledge graph representation learning (KGRL)</em> approaches that model these phenomena explicitly.
+            </p>
+            <p class="mb-0">
+              Recently, I integrated the EU‑funded project <strong>KATY</strong> (Knowledge At the Tip of Your fingers), contributing to a clinical knowledge graph that links kidney cancer patient data with multi‑domain biomedical knowledge to support AI‑driven prediction tasks for drug development and personalized medicine.
+            </p>
           </div>
         </div>
-      </footer><!-- End Footer -->
+      </div>
+    </section>
 
-      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-      <!-- Vendor JS Files -->
-      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-      <script src="assets/vendor/php-email-form/validate.js"></script>
-      <script src="assets/vendor/purecounter/purecounter.js"></script>
-      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-      <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-      <!-- Template Main JS File -->
-      <script src="assets/js/main.js"></script>
-    </body>
-    </html>
+    <!-- ======= Academic Background ======= -->
+    <section id="academic" class="py-4 py-md-5 bg-light">
+      <div class="container">
+        <div class="section-title mb-3"><h2>Academic Background</h2></div>
+        <div class="row">
+          <div class="col-12 col-lg-10">
+            <div class="timeline">
+              <!-- Example entries — replace/edit as needed -->
+              <div class="tl-item">
+                <p class="tl-title">PhD (ongoing) · Informatics / Computer Science</p>
+                <p class="tl-meta">Faculty of Sciences, University of Lisbon · LiSeDa / LASIGE · <span class="text-muted">2024 – present</span></p>
+              </div>
+              <div class="tl-item">
+                <p class="tl-title">MSc · <span class="text-muted">[Your programme]</span></p>
+                <p class="tl-meta">[University / Institution] · <span class="text-muted">[Year]</span></p>
+              </div>
+              <div class="tl-item">
+                <p class="tl-title">BSc · <span class="text-muted">[Your programme]</span></p>
+                <p class="tl-meta">[University / Institution] · <span class="text-muted">[Year]</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ======= CV Callout ======= -->
+    <section id="cv" class="py-4 py-md-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="cv-card text-center">
+              <h4 class="mb-2"><i class="bi bi-file-earmark-person me-2"></i>Curriculum Vitae</h4>
+              <p class="mb-3">For more details, you can find my CV here:</p>
+              <a href="assets/docs/Laura_Balbi_CV.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Open CV (PDF)
+              </a>
+              <p class="small text-muted mt-2 mb-0">Update the path if your CV lives elsewhere.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container d-md-flex py-4 align-items-center justify-content-between">
+      <div class="small">© <span id="year"></span> Laura Balbi</div>
+      <div class="social-links text-center text-md-right pt-2 pt-md-0">
+        <a href="https://github.com/lbalbi" class="github" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Year auto-update
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
