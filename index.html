@@ -63,27 +63,13 @@
 
     /* Utility tweaks */
     .lead-tight { line-height: 1.5; }
+    
+    body { padding-top: 120px !important; }
+    @media (max-width: 991.98px) { body { padding-top: 150px !important; } }
+    #hero { padding-top: 2rem !important; } 
+    
   </style>
 </head>
-
-<script>
-  (function () {
-    function setHeaderHeightVar() {
-      var header = document.getElementById('header');
-      if (!header) return;
-      var h = header.getBoundingClientRect().height;
-      document.documentElement.style.setProperty('--header-height', h + 'px');
-    }
-    window.addEventListener('load', setHeaderHeightVar);
-    window.addEventListener('resize', setHeaderHeightVar, { passive: true });
-    document.addEventListener('DOMContentLoaded', function () {
-      var imgs = document.querySelectorAll('#header img');
-      imgs.forEach(function (img) {
-        if (!img.complete) img.addEventListener('load', setHeaderHeightVar, { once: true });
-      });
-    });
-  })();
-</script>
 
   
 <body>
