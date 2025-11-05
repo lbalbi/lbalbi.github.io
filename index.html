@@ -68,16 +68,23 @@
 
 <script>
   (function () {
-    const header = document.getElementById('header');
     function setHeaderHeightVar() {
+      var header = document.getElementById('header');
       if (!header) return;
-      const h = header.offsetHeight;
+      var h = header.getBoundingClientRect().height;
       document.documentElement.style.setProperty('--header-height', h + 'px');
     }
-    setHeaderHeightVar();
+    window.addEventListener('load', setHeaderHeightVar);
     window.addEventListener('resize', setHeaderHeightVar, { passive: true });
+    document.addEventListener('DOMContentLoaded', function () {
+      var imgs = document.querySelectorAll('#header img');
+      imgs.forEach(function (img) {
+        if (!img.complete) img.addEventListener('load', setHeaderHeightVar, { once: true });
+      });
+    });
   })();
 </script>
+
   
 <body>
   <!-- ======= Header ======= -->
