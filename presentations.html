@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Presentations & Event participations • Laura Balbi</title>
+  <title>Presentations & Event Participations • Laura Balbi</title>
   <meta content="Talks, conference presentations, posters and event participations by Laura Balbi." name="description">
-  <meta content="Laura Balbi, talks, presentations, conference patrticipations, workshop, posters, events, LASIGE, LiSeDa, FCUL" name="keywords">
+  <meta content="Laura Balbi, talks, presentations, conference participations, workshop, posters, events, LASIGE, LiSeDa, FCUL" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
@@ -24,12 +24,30 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Page-specific minimal styling -->
+  <!-- Page-specific minimal styling (matches index header) -->
   <style>
-    :root { --accent: #0d6efd; }
-    #header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.05); }
-    .breadcrumbs { padding-top: 6.25rem; padding-bottom: .25rem; background: linear-gradient(180deg, rgba(13,110,253,0.04), rgba(13,110,253,0)); }
-    .section-title h2 { font-weight: 700; }
+    :root { --accent: #0d6efd; --header-height: 72px; }
+
+    /* --- Header: identical behavior to index --- */
+    .logo-box{
+      background:#fff; border-radius:.75rem; padding:.4rem .6rem;
+      display:inline-flex; align-items:center; gap:.5rem;
+      box-shadow:0 0 0 1px rgba(0,0,0,.06), 0 6px 18px rgba(0,0,0,.10);
+    }
+    .logo-box img{ display:block; }
+    #header{ height:var(--header-height) !important; }
+    #header .container{ height:100%; display:flex; align-items:center; }
+    #navbar{ height:100%; display:flex; align-items:center; }
+    #navbar ul{ height:100%; display:flex; align-items:center; }
+    #navbar a{ padding:0 0 0 30px; line-height:1; display:flex; align-items:center; }
+    @media (max-width:991.98px){ #navbar a{ padding-left:18px; } }
+
+    /* Clear space for fixed header (same as index) */
+    body{ padding-top:120px !important; }
+    @media (max-width:991.98px){ body{ padding-top:150px !important; } }
+
+    /* Breadcrumbs: no extra top margin since body is padded */
+    .breadcrumbs{ padding-top:.25rem; padding-bottom:.25rem; }
 
     /* Cards */
     .event-card { border: 0; border-radius: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,.06); background: #fff; height: 100%; }
@@ -42,51 +60,25 @@
     .toc a { display: block; padding: .35rem .5rem; border-radius: .5rem; text-decoration: none; color: #344; }
     .toc a:hover, .toc a.active { background: rgba(13,110,253,.08); color: var(--accent); }
 
-    /* Year separators */
-    .year-h { font-weight: 700; color: #111; margin: 1.25rem 0 .5rem; }
-
-    
-    #hero h1 { color: #111 !important; }
-    /* 2) Logos inside one white box */
-    .logo-box {
-      background: #ffffff;
-      border-radius: .75rem;
-      padding: .4rem .6rem;
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 6px 18px rgba(0,0,0,.10);
-    }
-    /* Make sure images don’t butt up to the edges */
-    .logo-box img { display:block; }
-    /* 3) Center nav links vertically in header */
-    #header { height: var(--header-height) !important; }
-    #header .container { height: 100%; display: flex; align-items: center; }
-
-    #navbar { height: 100%; display: flex; align-items: center; }
-    #navbar ul { height: 100%; display: flex; align-items: center; }
-    #navbar a { padding: 0 0 0 30px; line-height: 1; display:flex; align-items:center; }
-    /* Optional: slightly tighter header on small screens */
-    @media (max-width: 991.98px) {
-      #navbar a { padding-left: 18px; }
-    }
-    
+    /* Year/title separators */
+    .year-h, .section-title h2 { font-weight: 700; }
   </style>
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
+  <!-- ======= Header (same as index) ======= -->
+  <header id="header" class="fixed-top shadow-sm">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <div class="logo d-flex align-items-center gap-2">
-        <a href="https://ciencias.ulisboa.pt/en" aria-label="FCUL website"><img src="assets/img/logos/fcul.png" alt="FCUL" class="img-fluid" style="width:90px"></a>
-        <a href="https://www.lasige.pt/" aria-label="LASIGE website"><img src="assets/img/logos/lasige.jpg" alt="LASIGE" class="img-fluid" style="width:80px"></a>
+      <div class="logo logo-box d-flex align-items-center gap-2">
+        <a href="https://fct.pt/en" class="me-2" aria-label="FCT website"><img src="assets/img/logos/fct.png" alt="FCT" class="img-fluid" style="width:90px"></a>
+        <a href="https://ciencias.ulisboa.pt/en" class="me-2" aria-label="FCUL website"><img src="assets/img/logos/fcul.png" alt="FCUL" class="img-fluid" style="width:90px"></a>
+        <a href="https://www.lasige.pt/" class="me-2" aria-label="LASIGE website"><img src="assets/img/logos/lasige.jpg" alt="LASIGE" class="img-fluid" style="width:70px"></a>
         <a href="https://liseda-lab.github.io/" aria-label="LiSeDa home"><img src="assets/img/logos/liseda_blue_whiteBK.png" alt="LiSeDa" class="img-fluid" style="width:50px"></a>
       </div>
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
+      <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index">Home</a></li>
           <li><a class="nav-link scrollto" href="team">Background</a></li>
@@ -101,21 +93,23 @@
         <a href="https://github.com/lbalbi" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
       </div>
     </div>
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
 
   <main id="main">
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center">
-          <h2 class="mb-0"> Presentations & Event participations in 2025 </h2>
+          <h2 class="mb-0">Presentations & Event Participations in 2025</h2>
           <ol class="mb-0">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index">Home</a></li>
             <li>Presentations</li>
           </ol>
         </div>
       </div>
-    </section><!-- End Breadcrumbs -->
+    </section>
+    <!-- End Breadcrumbs -->
 
     <!-- ======= Intro ======= -->
     <section class="py-4 py-md-5">
@@ -130,9 +124,8 @@
             </nav>
           </aside>
           <div class="col-12 col-lg-9">
-            <p class="mb-0">This page highlights presentations on conferences and other research events. </p>
-            <p></p>
-            <p class="mb-0"> Where available, you can open slides directly.</p>
+            <p class="mb-0">This page highlights presentations at conferences and other research events.</p>
+            <p class="mb-0">Where available, you can open slides and materials directly.</p>
           </div>
         </div>
       </div>
@@ -143,23 +136,23 @@
       <div class="container">
         <div class="section-title mb-3"><h2>Conference Presentations</h2></div>
         <div class="row g-3">
-          
           <div class="col-12 col-md-6">
             <div class="card event-card h-100">
               <div class="card-body">
                 <div class="d-flex flex-wrap align-items-baseline gap-2">
-                  <span class="event-meta">June 2025 · ESWC 2025, Portoroz</span>
+                  <span class="event-meta">June 2025 · ESWC 2025, Portorož</span>
                 </div>
-                <h5 class="card-title mt-1 mb-1"> Neurosymbolic AI for Conflict-Aware Learning over Knowledge Graphs</h5>
-                <p class="card-text small mb-2">Received Best Doctoral Paper Award</p>
+                <h5 class="card-title mt-1 mb-1">Neurosymbolic AI for Conflict-Aware Learning over Knowledge Graphs</h5>
+                <p class="card-text small mb-2">Best Doctoral Paper Award</p>
                 <div class="d-flex flex-wrap gap-2">
                   <a class="btn btn-sm btn-outline-primary" href="https://lasige.pt/best-phd-symposium-paper-award-at-eswc-2025/" target="_blank" rel="noopener"><i class="bi bi-image me-1"></i> Newsletter page</a>
                   <a class="btn btn-sm btn-outline-primary" href="assets/docs/ESWC_PhDsymposium.pdf" target="_blank" rel="noopener"><i class="bi bi-sliders me-1"></i> Slides</a>
-                  <a class="btn btn-sm btn-outline-primary" href="assets/docs/Laura_ESWC_PhD_paper.pdf" target="_blank" rel="noopener"><i class="bi bi-sliders me-1"></i> Paper</a>
+                  <a class="btn btn-sm btn-outline-primary" href="assets/docs/Laura_ESWC_PhD_paper.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text me-1"></i> Paper</a>
                 </div>
               </div>
             </div>
           </div>
+          <!-- Add more conference items as needed -->
         </div>
       </div>
     </section>
@@ -168,75 +161,78 @@
     <section id="events" class="py-4 py-md-5 bg-light">
       <div class="container">
         <div class="section-title mb-3"><h2>Participation in Events</h2></div>
-        
         <div class="row g-3">
           <div class="col-12 col-md-6">
             <div class="card event-card h-100">
               <div class="card-body">
                 <div class="d-flex flex-wrap align-items-baseline gap-2">
-                <span class="event-meta"> September 2025 · European Researchers' Night 2025, Lisbon </span>
-                </div>  
-                <p> </p>  
-                <h5 class="card-title mt-1 mb-1"> Presentation of XAI Interface Demo</h5>
-                <p> </p>
-                <h5 class="card-title mt-1 mb-1"> Discussion of contributions to a project on the topic of Explainable AI for 
-                  personalized medicine.</h5>
+                  <span class="event-meta">September 2025 · European Researchers' Night 2025, Lisbon</span>
                 </div>
+                <h5 class="card-title mt-1 mb-1">Presentation of XAI Interface Demo</h5>
+                <p class="mb-2">Discussion of contributions to a project on Explainable AI for personalized medicine.</p>
                 <a class="btn btn-sm btn-outline-primary" href="https://lasige.pt/lasige-at-nei-2025/" target="_blank" rel="noopener"><i class="bi bi-image me-1"></i> Newsletter page</a>
               </div>
             </div>
+          </div>
 
           <div class="col-12 col-md-6">
             <div class="card event-card h-100">
               <div class="card-body">
                 <div class="d-flex flex-wrap align-items-baseline gap-2">
-                  <span class="event-meta" > July 2025 · Lisbon HCIxHAI Meetup, Lisbon </span>
-                  <h5 class="card-title mt-1 mb-1"> Presentation of Thesis Project's first outreach publication "Neurosymbolic AI for Conflict-Aware Learning over Knowledge Graphs" </h5>
-                  </div>
-                <a class="btn btn-sm btn-outline-primary" href="https://lasige.pt/internationally-renowned-contributions-in-lisbon-hcixhai-meetup/" target="_blank" rel="noopener"><i class="bi bi-image me-1"></i> Newsletter page</a>
-                <a class="btn btn-sm btn-outline-primary" href="assets/docs/HCIxHAI_Symposium.pdf" target="_blank" rel="noopener"><i class="bi bi-sliders me-1"></i> Slides</a>
+                  <span class="event-meta">July 2025 · Lisbon HCIxHAI Meetup, Lisbon</span>
+                </div>
+                <h5 class="card-title mt-1 mb-1">Presentation of thesis outreach publication “Neurosymbolic AI for Conflict-Aware Learning over Knowledge Graphs”</h5>
+                <div class="d-flex flex-wrap gap-2">
+                  <a class="btn btn-sm btn-outline-primary" href="https://lasige.pt/internationally-renowned-contributions-in-lisbon-hcixhai-meetup/" target="_blank" rel="noopener"><i class="bi bi-image me-1"></i> Newsletter page</a>
+                  <a class="btn btn-sm btn-outline-primary" href="assets/docs/HCIxHAI_Symposium.pdf" target="_blank" rel="noopener"><i class="bi bi-sliders me-1"></i> Slides</a>
+                </div>
               </div>
             </div>
           </div>
+          <!-- Add more event items as needed -->
         </div>
       </div>
-    
+    </section>
+
     <!-- ======= Posters & Demos ======= -->
     <section id="posters" class="py-4 py-md-5 bg-light">
       <div class="container">
         <div class="section-title mb-3"><h2>Poster Presentations</h2></div>
-        
         <div class="row g-3">
-          
           <div class="col-12 col-md-6">
             <div class="card event-card h-100">
               <div class="card-body">
                 <div class="d-flex flex-wrap align-items-baseline gap-2">
-                  <span class="event-meta">June 2025 · ISWS 2025, Bertinoro </span>
+                  <span class="event-meta">June 2025 · ISWS 2025, Bertinoro</span>
                 </div>
-                <h5 class="card-title mt-1 mb-1"> Neurosymbolic AI for Learning over Knowledge Graphs with contradictions </h5>
-                <a class="btn btn-sm btn-outline-primary" href="https://lasige.pt/lasige-students-week-at-the-isws-summer-school/" target="_blank" rel="noopener"><i class="bi bi-image me-1"></i> Newsletter page</a>
-                <a class="btn btn-sm btn-outline-primary" href="/assets/docs/Nesy2025poster.pdf" target="_blank" rel="noopener"><i class="bi bi-image me-1"></i> Poster PDF</a>
+                <h5 class="card-title mt-1 mb-1">Neurosymbolic AI for Learning over Knowledge Graphs with Contradictions</h5>
+                <div class="d-flex flex-wrap gap-2">
+                  <a class="btn btn-sm btn-outline-primary" href="https://lasige.pt/lasige-students-week-at-the-isws-summer-school/" target="_blank" rel="noopener"><i class="bi bi-image me-1"></i> Newsletter page</a>
+                  <a class="btn btn-sm btn-outline-primary" href="assets/docs/Nesy2025poster.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-image me-1"></i> Poster PDF</a>
+                </div>
               </div>
             </div>
           </div>
-          
+
           <div class="col-12 col-md-6">
             <div class="card event-card h-100">
               <div class="card-body">
                 <div class="d-flex flex-wrap align-items-baseline gap-2">
-                  <span class="event-meta"> May 2025 · BRIDges: Boosting research in interdisciplinary domains 2025, Lisbon </span>
+                  <span class="event-meta">May 2025 · BRIDges: Boosting Research in Interdisciplinary Domains, Lisbon</span>
                 </div>
-                <h5 class="card-title mt-1 mb-1">Neurosymbolic AI for modelling Bio-Knowledge Graphs with contradictions </h5>
-                <a class="btn btn-sm btn-outline-primary" href="https://lasige.pt/diogo-soares-talk-at-bridges-meeting/" target="_blank" rel="noopener"><i class="bi bi-image me-1"></i> Newsletter page</a>
-                <a class="btn btn-sm btn-outline-primary" href="/assets/docs/LauraBalbi_BRIDges25.pdf" target="_blank" rel="noopener"><i class="bi bi-image me-1"></i> Poster PDF</a>
+                <h5 class="card-title mt-1 mb-1">Neurosymbolic AI for Modelling Bio-Knowledge Graphs with Contradictions</h5>
+                <div class="d-flex flex-wrap gap-2">
+                  <a class="btn btn-sm btn-outline-primary" href="https://lasige.pt/diogo-soares-talk-at-bridges-meeting/" target="_blank" rel="noopener"><i class="bi bi-image me-1"></i> Newsletter page</a>
+                  <a class="btn btn-sm btn-outline-primary" href="assets/docs/LauraBalbi_BRIDges25.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-image me-1"></i> Poster PDF</a>
+                </div>
               </div>
             </div>
           </div>
+          <!-- Add more poster items as needed -->
         </div>
       </div>
-      
     </section>
+
   </main>
 
   <!-- ======= Footer ======= -->
@@ -247,7 +243,8 @@
         <a href="https://github.com/lbalbi" class="github" aria-label="GitHub"><i class="bx bxl-github"></i></a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
+  <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
 
