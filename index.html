@@ -65,6 +65,20 @@
     .lead-tight { line-height: 1.5; }
   </style>
 </head>
+
+<script>
+  (function () {
+    const header = document.getElementById('header');
+    function setHeaderHeightVar() {
+      if (!header) return;
+      const h = header.offsetHeight;
+      document.documentElement.style.setProperty('--header-height', h + 'px');
+    }
+    setHeaderHeightVar();
+    window.addEventListener('resize', setHeaderHeightVar, { passive: true });
+  })();
+</script>
+  
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top bg-white shadow-sm">
