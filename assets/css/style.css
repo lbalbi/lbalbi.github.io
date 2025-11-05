@@ -1254,9 +1254,7 @@ section {
 
 /* Hero section background + light text */
 #hero {
-  background: linear-gradient(180deg, rgba(21,54,91,.85), rgba(10,26,43,.85)),
-              url('../img/patterns/noise.png'); /* optional texture; remove if not present */
-  color: #f5f8ff;
+  background: linear-gradient(180deg, rgba(21,54,91,.85), rgba(10,26,43,.85));
 }
 
 /* Alternating section tints (keeps cards readable on white) */
@@ -1305,5 +1303,6 @@ section:not(.bg-light):not(#hero) { background: #ffffff; }
 /* Links inside content */
 a { color: var(--brand-500); }
 a:hover { color: var(--brand-600); }
+
 
 
