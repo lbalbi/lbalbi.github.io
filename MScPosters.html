@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Publications</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>MSc Posters • Laura Balbi</title>
+  <meta content="MSc posters presented by Laura Balbi at workshops, conferences and other events." name="description">
+  <meta content="Laura Balbi, posters, MSc, LASIGE, LiSeDa, FCUL" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
@@ -26,176 +26,161 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Lumia - v4.6.0
-  * Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Page-specific header + sticky-footer styles -->
+  <style>
+    :root { --accent: #0d6efd; --header-height: 72px; }
+
+    /* Sticky footer layout */
+    html, body { height: 100%; }
+    body { display: flex; flex-direction: column; }
+    main#main { flex: 1 0 auto; } /* grow to fill */
+    #footer { flex-shrink: 0; }    /* keep footer at bottom */
+
+    /* Space for fixed header (same as index) */
+    body { padding-top: 120px !important; }
+    @media (max-width: 991.98px) { body { padding-top: 150px !important; } }
+
+    /* Breadcrumbs: minimal extra space (body already padded) */
+    .breadcrumbs { padding-top: .25rem; padding-bottom: .25rem; }
+
+    /* Header: white logo box + centered nav links (same as index) */
+    .logo-box {
+      background: #ffffff; border-radius: .75rem; padding: .4rem .6rem;
+      display: inline-flex; align-items: center; gap: .5rem;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 6px 18px rgba(0,0,0,.10);
+    }
+    .logo-box img { display: block; }
+
+    #header { height: var(--header-height) !important; }
+    #header .container { height: 100%; display: flex; align-items: center; }
+    #navbar { height: 100%; display: flex; align-items: center; }
+    #navbar ul { height: 100%; display: flex; align-items: center; }
+    #navbar a { padding: 0 0 0 30px; line-height: 1; display:flex; align-items:center; }
+    @media (max-width: 991.98px) { #navbar a { padding-left: 18px; } }
+
+    /* Cards */
+    .icon-box { border: 0; border-radius: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,.06); background: #fff; padding: 1.25rem; }
+    .section-title h2 { font-weight: 700; }
+  </style>
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
+  <!-- ======= Header (same structure as index) ======= -->
+  <header id="header" class="fixed-top shadow-sm">
+    <div class="container d-flex align-items-center justify-content-between">
 
-      <div class="logo me-auto">
-        <!--<h1><a href="index.html">Lumia</a></h1>-->
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="https://ciencias.ulisboa.pt/en"><img src="assets/img/logos/fcul.png" alt="" class="img-fluid" style="width:100px"></a>
-        <a href="https://www.lasige.pt/"><img src="assets/img/logos/lasige.jpg" alt="" class="img-fluid" style="width:90px"></a>
-        &emsp;
-        <a href="https://liseda-lab.github.io/"><img src="assets/img/logos/liseda_blue_whiteBK.png" alt="" class="img-fluid" style="width:60px" ></a>
+      <div class="logo logo-box d-flex align-items-center gap-2">
+        <a href="https://fct.pt/en" class="me-2" aria-label="FCT website"><img src="assets/img/logos/fct.png" alt="FCT" class="img-fluid" style="width:90px"></a>
+        <a href="https://ciencias.ulisboa.pt/en" class="me-2" aria-label="FCUL website"><img src="assets/img/logos/fcul.png" alt="FCUL" class="img-fluid" style="width:90px"></a>
+        <a href="https://www.lasige.pt/" class="me-2" aria-label="LASIGE website"><img src="assets/img/logos/lasige.jpg" alt="LASIGE" class="img-fluid" style="width:70px"></a>
+        <a href="https://liseda-lab.github.io/" aria-label="LiSeDa home"><img src="assets/img/logos/liseda_blue_whiteBK.png" alt="LiSeDa" class="img-fluid" style="width:50px"></a>
       </div>
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
+      <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index">Home</a></li>
+          <li><a class="nav-link scrollto" href="index">Home</a></li>
           <li><a class="nav-link scrollto" href="team">Background</a></li>
           <li><a class="nav-link scrollto" href="projects">Projects</a></li>
-          <li><a class="nav-link scrollto " href="publications">Publications</a></li>
+          <li><a class="nav-link scrollto active" href="publications">Publications</a></li>
           <li><a class="nav-link scrollto" href="presentations">Presentations</a></li>
-
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+        <i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
+      </nav>
 
       <div class="header-social-links d-flex align-items-center">
-        <a href="https://github.com/lbalbi" class="github"><i class="bi bi-github"></i></i></a>
+        <a href="https://github.com/lbalbi" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
       </div>
 
     </div>
-  </header><!-- End Header -->
+  </header>
+  <!-- End Header -->
 
   <main id="main">
-
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
       <div class="container">
-
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Publications</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Publications</li>
+          <h2 class="mb-0">MSc Posters</h2>
+          <ol class="mb-0">
+            <li><a href="index">Home</a></li>
+            <li><a href="publications">Publications</a></li>
+            <li>MSc Posters</li>
           </ol>
         </div>
-
       </div>
-    </section><!-- End Breadcrumbs -->
+    </section>
+    <!-- End Breadcrumbs -->
 
-
-
-    <!-- ======= Publications Section ======= -->
+    <!-- ======= Posters Section ======= -->
     <section id="publications" class="services section-bg">
       <div class="container">
-
         <div class="section-title">
-          <!-- <h2>Publications</h2> -->
-          <p>Here you can consult posters presented at workshops and other events.</p>
-          <p><a href="publications.html">Click here to go back to the main publications page.</a></p>
+          <h2>Overview</h2>
+          <p class="mb-2">Here you can consult posters presented at workshops and other events during my MSc.</p>
+          <p class="mb-0"><a href="publications"><i class="bi bi-arrow-left-short"></i> Back to the main publications page</a></p>
         </div>
 
-        <!-- end row -->
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <div class="icon-box">
+              <table>
+                <tr>
+                  <td class="pe-3"><i class="bi bi-easel" aria-hidden="true"></i></td>
+                  <td>
+                    <h4 class="mb-1">
+                      <a href="https://lbalbi.github.io/posters/2022BOD_ImprovingdataminingPPIwithDLandKG/index.html" target="_blank" rel="noopener">
+                        Improving data mining of PPI networks by combining deep learning with knowledge graphs
+                      </a>
+                    </h4>
+                    <p class="mb-1">L. Balbi, C. Pesquita</p>
+                    <p class="mb-0 small text-muted">
+                      11th Bioinformatics Open Days · 2022<br>
+                      7th LASIGE Workshop · 2022<br>
+                      2nd Thematic Wide Health Summer School · 2022
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          
+          <!-- To add more poster cards here  -->
+          
+        </div>
+      </div>
+    </section>
+    
+  </main>
 
-        <!-- start row -->
-        <!--<div class="row mt-3">
-        <div class="col-md-6">
-        <div class="icon-box">
-        <table>
-        <tr>
-        <td><i class="bi bi-easel"></i></td>
-        <td>
-        <h4><a href="">title</a></h4>
-        <p> authors <br> conference <br> 2022 </p>
-      </td>
-    </tr>
-  </table>
-</div>
-</div>
-
-<div class="col-md-6 mt-4 mt-lg-0">
-<div class="icon-box">
-<table>
-<tr>
-<td><i class="bi bi-easel"></i></td>
-<td>
-<h4><a href="">title</a></h4>
-<p> authors <br> conference <br> 2022 </p>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div> -->
-<!-- end row -->
-
-
-<!-- start row -->
-
-  <div class="col-md-6 mt-4 mt-lg-0">
-    <div class="icon-box">
-      <table>
-        <tr>
-          <td><i class="bi bi-easel"></i></td>
-          <td>
-            <h4><a href="https://lbalbi.github.io/posters/2022BOD_ImprovingdataminingPPIwithDLandKG/index.html">Improving data mining of PPI networks by combining deep learning with knowledge graphs</a></h4>
-            <p> L. Balbi, C. Pesquita </p>
-            <p> 
-            <br> 11th Bioinformatics Open Days, 2022 <br> 
-            <br> 7th LASIGE Workshop, 2022 <br> 
-            <br> 2nd Thematic Wide Health Summer School, 2022  <br>
-            </p>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</div>
-
-
-</div>
-</section><!-- End Publications Section -->
-
-</main><!-- End #main -->
-
-<!-- ======= Footer ======= -->
-<footer id="footer">
-
-  <div class="container d-md-flex py-4">
-
-    <div class="me-md-auto text-center text-md-start">
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/lumia-bootstrap-business-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+  <!-- ======= Footer (sticky) ======= -->
+  <footer id="footer">
+    <div class="container d-md-flex py-4 align-items-center justify-content-between">
+      <div class="small">© <span id="year"></span> Laura Balbi</div>
+      <div class="social-links text-center text-md-right pt-2 pt-md-0">
+        <a href="https://github.com/lbalbi" class="github" aria-label="GitHub"><i class="bx bxl-github"></i></a>
       </div>
     </div>
-    <div class="social-links text-center text-md-right pt-3 pt-md-0">
-      <a href="https://github.com/lbalbi" class="github"><i class="bx bxl-github"></i></a>
-    </div>
-  </div>
-</footer><!-- End Footer -->
+  </footer>
+  <!-- End Footer -->
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- Vendor JS Files -->
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/vendor/purecounter/purecounter.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
-<!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Year auto-update
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
-
 </html>
-
-
