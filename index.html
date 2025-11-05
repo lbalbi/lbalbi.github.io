@@ -24,7 +24,8 @@
 
   <!-- Page-specific minimal styling to improve layout/organization -->
   <style>
-    :root { --accent: #0d6efd; }
+   
+    :root { --accent: #0d6efd; --header-height: 72px; }
     body { scroll-behavior: smooth; }
 
     /* Header logo strip tweaks */
@@ -32,8 +33,14 @@
     #header .header-social-links a { font-size: 1.25rem; }
 
     /* Hero */
-    #hero { padding-top: 7rem; padding-bottom: 3rem; background: linear-gradient(180deg, rgba(13,110,253,0.06), rgba(13,110,253,0.02)); }
-    .headshot { max-width: 260px; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.12); }
+    #hero { padding-top: calc(var(--header-height) + 2rem); padding-bottom: 3rem; 
+           background: linear-gradient(180deg, rgba(13,110,253,0.06), rgba(13,110,253,0.02)); 
+          } 
+    @media (max-width: 991.98px) {
+    #hero { padding-top: calc(var(--header-height) + 3.5rem); }}
+    
+    .headshot { max-width: 260px; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.12); 
+              margin-top: .25rem;}
     .hero-bio { font-size: 1.05rem; color: #444; }
 
     /* Reusable card style */
