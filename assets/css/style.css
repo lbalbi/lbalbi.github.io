@@ -1230,7 +1230,6 @@ section {
 
   /* Accent alias used in your pages */
   --accent: var(--brand-500);
-
   /* Bootstrap primary + link colors */
   --bs-primary: var(--brand-500);
   --bs-primary-rgb: 30, 90, 163;
@@ -1259,7 +1258,6 @@ section {
               url('../img/patterns/noise.png'); /* optional texture; remove if not present */
   color: #f5f8ff;
 }
-#hero h1, #hero p, #hero a.btn { color: #f5f8ff; }
 
 /* Alternating section tints (keeps cards readable on white) */
 section.bg-light { background: linear-gradient(180deg, #f8fbff, #f3f7fd); }
@@ -1307,4 +1305,5 @@ section:not(.bg-light):not(#hero) { background: #ffffff; }
 /* Links inside content */
 a { color: var(--brand-500); }
 a:hover { color: var(--brand-600); }
+
 
