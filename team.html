@@ -42,6 +42,32 @@
     .tl-meta { margin: 0; font-size: .9rem; color: #6c757d; }
 
     .cv-card { border: 0; border-radius: 1rem; box-shadow: 0 8px 24px rgba(0,0,0,.06); padding: 1.25rem; background: #fff; }
+
+    
+    
+    #hero h1 { color: #111 !important; }
+    /* 2) Logos inside one white box */
+    .logo-box {
+      background: #ffffff;
+      border-radius: .75rem;
+      padding: .4rem .6rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 6px 18px rgba(0,0,0,.10);
+    }
+    /* Make sure images don’t butt up to the edges */
+    .logo-box img { display:block; }
+    /* 3) Center nav links vertically in header */
+    #header { height: var(--header-height) !important; }
+    #header .container { height: 100%; display: flex; align-items: center; }
+    #navbar { height: 100%; display: flex; align-items: center; }
+    #navbar ul { height: 100%; display: flex; align-items: center; }
+    #navbar a { padding: 0 0 0 30px; line-height: 1; display:flex; align-items:center; }
+    /* Optional: slightly tighter header on small screens */
+    @media (max-width: 991.98px) {
+      #navbar a { padding-left: 18px; }
+    }
   </style>
 </head>
 
@@ -190,6 +216,7 @@
   </script>
 </body>
 </html>
+
 
 
 
