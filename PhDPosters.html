@@ -45,6 +45,12 @@
     #navbar a { padding: 0 0 0 30px; line-height: 1; display: flex; align-items: center; }
     @media (max-width: 991.98px) { #navbar a { padding-left: 18px; } }
 
+    /* Sticky footer layout to keep at bottom of page */
+    html, body { height: 100%; }
+    body { display: flex; flex-direction: column; }
+    main#main { flex: 1 0 auto; }
+    #footer { flex-shrink: 0; }
+
     /* Space for fixed header (same as index) */
     body { padding-top: 120px !important; }
     @media (max-width: 991.98px) { body { padding-top: 150px !important; } }
