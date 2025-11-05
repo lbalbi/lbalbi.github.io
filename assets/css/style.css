@@ -1244,7 +1244,7 @@ section {
 }
 #header .navbar a,
 #header .header-social-links a {
-  color: #e6eef8;
+  color: #0a1a2b;
 }
 #header .navbar a:hover,
 #header .navbar .active,
@@ -1303,6 +1303,7 @@ section:not(.bg-light):not(#hero) { background: #ffffff; }
 /* Links inside content */
 a { color: var(--brand-500); }
 a:hover { color: var(--brand-600); }
+
 
 
 
