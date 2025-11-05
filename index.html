@@ -24,7 +24,6 @@
 
   <!-- Page-specific minimal styling to improve layout/organization -->
   <style>
-   
     :root { --accent: #0d6efd; --header-height: 72px; }
     body { scroll-behavior: smooth; }
 
@@ -33,14 +32,11 @@
     #header .header-social-links a { font-size: 1.25rem; }
 
     /* Hero */
-    #hero { padding-top: calc(var(--header-height) + 2rem); padding-bottom: 3rem; 
-           background: linear-gradient(180deg, rgba(13,110,253,0.06), rgba(13,110,253,0.02)); 
-          } 
-    @media (max-width: 991.98px) {
-    #hero { padding-top: calc(var(--header-height) + 3.5rem); }}
-    
-    .headshot { max-width: 260px; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.12); 
-              margin-top: .25rem;}
+    #hero { padding-top: calc(var(--header-height) + 2rem); padding-bottom: 3rem;
+            background: linear-gradient(180deg, rgba(13,110,253,0.06), rgba(13,110,253,0.02)); }
+    @media (max-width: 991.98px) { #hero { padding-top: calc(var(--header-height) + 3.5rem); } }
+
+    .headshot { max-width: 260px; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.12); margin-top: .25rem; }
     .hero-bio { font-size: 1.05rem; color: #555; }
 
     /* Reusable card style */
@@ -63,21 +59,70 @@
 
     /* Utility tweaks */
     .lead-tight { line-height: 1.5; }
-    
+
     body { padding-top: 120px !important; }
     @media (max-width: 991.98px) { body { padding-top: 150px !important; } }
-    #hero { padding-top: 2rem !important; } 
-    
+    #hero { padding-top: 2rem !important; }
+
+    /* =========================================
+       FIXES REQUESTED
+       1) Make the name readable (dark)
+       2) Put logos on a single white box
+       3) Vertically center nav links in header
+       ========================================= */
+
+    /* 1) Name color readable */
+    #hero h1 { color: #111 !important; }
+
+    /* 2) Logos inside one white box */
+    .logo-box {
+      background: #ffffff;
+      border-radius: .75rem;
+      padding: .4rem .6rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 6px 18px rgba(0,0,0,.10);
+    }
+    /* Make sure images don’t butt up to the edges */
+    .logo-box img { display:block; }
+
+    /* 3) Center nav links vertically in header */
+    #header { height: var(--header-height) !important; }
+    #header .container { height: 100%; display: flex; align-items: center; }
+
+    #navbar { height: 100%; display: flex; align-items: center; }
+    #navbar ul { height: 100%; display: flex; align-items: center; }
+    #navbar a { padding: 0 0 0 30px; line-height: 1; display:flex; align-items:center; }
+
+    /* Optional: slightly tighter header on small screens */
+    @media (max-width: 991.98px) {
+      #navbar a { padding-left: 18px; }
+    }
+
+    /* Hello line + wave (kept from prior step) */
+    .hello-line { font-size: 1.2rem; font-weight: 600; color: inherit; }
+    .wave { display:inline-block; transform-origin: 70% 70%; animation: wave-hand 1.6s ease-in-out 1; }
+    @keyframes wave-hand {
+      0% { transform: rotate(0deg); }
+      10% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      30% { transform: rotate(14deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(10deg); }
+      60%,100% { transform: rotate(0deg); }
+    }
+    @media (prefers-reduced-motion: reduce) { .wave { animation: none; } }
   </style>
 </head>
 
-  
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top bg-white shadow-sm">
+  <header id="header" class="fixed-top shadow-sm">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <div class="logo d-flex align-items-center gap-2">
+      <!-- Added logo-box here -->
+      <div class="logo logo-box d-flex align-items-center gap-2">
         <a href="https://fct.pt/en" class="me-2" aria-label="FCT website"><img src="assets/img/logos/fct.png" alt="FCT" class="img-fluid" style="width:90px"></a>
         <a href="https://ciencias.ulisboa.pt/en" class="me-2" aria-label="FCUL website"><img src="assets/img/logos/fcul.png" alt="FCUL" class="img-fluid" style="width:90px"></a>
         <a href="https://www.lasige.pt/" class="me-2" aria-label="LASIGE website"><img src="assets/img/logos/lasige.jpg" alt="LASIGE" class="img-fluid" style="width:70px"></a>
@@ -112,10 +157,10 @@
           <div class="col-12 col-md-8">
             <h1 class="fw-bold mb-2">Laura Balbi</h1>
             <p class="hello-line lead-tight mb-2">
-            Hello! <span class="wave" role="img" aria-label="waving hand">👋</span>
+              Hello! <span class="wave" role="img" aria-label="waving hand">👋</span>
             </p>
             <p class="hero-bio lead-tight mb-3">
-              PhD Student Researcher at the <strong>Lisbon Semantic Data Lab (LiSeDa)</strong>, a subunit of the <strong>LASIGE</strong> Research Unit, in the <strong>Faculty of Sciences</strong> of the <strong>University of Lisbon</strong>.
+              I'm a PhD Student Researcher at the <strong>Lisbon Semantic Data Lab (LiSeDa)</strong>, a subunit of the <strong>LASIGE</strong> Research Unit, in the <strong>Faculty of Sciences</strong> of the <strong>University of Lisbon</strong>.
             </p>
             <div class="d-flex align-items-center flex-wrap gap-2">
               <a href="publications" class="btn btn-primary btn-sm"><i class="bi bi-journal-text me-1"></i> Publications</a>
@@ -157,7 +202,7 @@
             <div class="icon-card h-100 d-flex">
               <div class="icon-badge"><i class="bi bi-cpu"></i></div>
               <div>
-                <h5 class="mb-1">Neuro‑Symbolic AI</h5>
+                <h5 class="mb-1">Neuro-Symbolic AI</h5>
                 <p class="mb-0 small text-muted">Combining logic and learning for robust reasoning.</p>
               </div>
             </div>
@@ -166,7 +211,7 @@
             <div class="icon-card h-100 d-flex">
               <div class="icon-badge"><i class="bi bi-graph-up"></i></div>
               <div>
-                <h5 class="mb-1">Graph‑based Neural Methods</h5>
+                <h5 class="mb-1">Graph-based Neural Methods</h5>
                 <p class="mb-0 small text-muted">GNNs and hybrid models over structured data.</p>
               </div>
             </div>
