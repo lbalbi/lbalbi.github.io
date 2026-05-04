@@ -24,45 +24,240 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Page-specific minimal styling (matches index header) -->
   <style>
-    :root { --accent: #0d6efd; --header-height: 72px; }
-
-    /* --- Header: identical behavior to index --- */
-    .logo-box{
-      background:#fff; border-radius:.75rem; padding:.4rem .6rem;
-      display:inline-flex; align-items:center; gap:.5rem;
-      box-shadow:0 0 0 1px rgba(0,0,0,.06), 0 6px 18px rgba(0,0,0,.10);
+    :root {
+      --accent: #2f80ed;
+      --accent-2: #6c63ff;
+      --ink: #1f2937;
+      --muted: #65747f;
+      --paper: #ffffff;
+      --soft: #f5f8fc;
+      --line: rgba(47, 128, 237, .16);
+      --header-height: 76px;
     }
-    .logo-box img{ display:block; }
-    #header{ height:var(--header-height) !important; }
-    #header .container{ height:100%; display:flex; align-items:center; }
-    #navbar{ height:100%; display:flex; align-items:center; }
-    #navbar ul{ height:100%; display:flex; align-items:center; }
-    #navbar a{ padding:0 0 0 30px; line-height:1; display:flex; align-items:center; }
-    @media (max-width:991.98px){ #navbar a{ padding-left:18px; } }
 
-    /* Clear space for fixed header (same as index) */
-    body{ padding-top:120px !important; }
-    @media (max-width:991.98px){ body{ padding-top:150px !important; } }
+    body {
+      padding-top: 112px !important;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(47, 128, 237, .08), transparent 30%),
+        linear-gradient(180deg, #fbfdff 0%, #f7fbfe 45%, #ffffff 100%);
+      color: var(--ink);
+      scroll-behavior: smooth;
+    }
 
-    /* Breadcrumbs: no extra top margin since body is padded */
-    .breadcrumbs{ padding-top:.25rem; padding-bottom:.25rem; }
+    a { color: var(--accent); }
+    a:hover { color: #1d64c8; }
 
-    .section-title h2 { font-weight: 700; }
+    #header {
+      min-height: var(--header-height) !important;
+      height: auto !important;
+      background: rgba(255,255,255,.94) !important;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(31,41,55,.08);
+    }
+    #header .container { min-height: var(--header-height); display: flex; align-items: center; }
+    #header .header-social-links a { font-size: 1.25rem; }
+
+    .logo-box {
+      background: #ffffff;
+      border-radius: 999px;
+      padding: .38rem .65rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      box-shadow: 0 0 0 1px rgba(31,41,55,.08), 0 10px 28px rgba(31,41,55,.08);
+    }
+    .logo-box img { display: block; object-fit: contain; }
+
+    #navbar { display: flex; align-items: center; }
+    #navbar ul { display: flex; align-items: center; gap: .15rem; margin: 0; }
+    #navbar a { padding: .55rem .85rem; border-radius: 999px; line-height: 1; display: flex; align-items: center; font-size: 15px; }
+    #navbar a:hover, #navbar .active, #navbar .active:focus { background: rgba(47,128,237,.10); color: var(--accent); }
+
+    @media (max-width: 991.98px) {
+      body { padding-top: 138px !important; }
+      .logo-box { border-radius: 1rem; flex-wrap: wrap; max-width: 260px; }
+      #navbar ul { display: none; }
+      #navbar.navbar-mobile { display: block; height: auto; }
+      #navbar.navbar-mobile ul { display: block; height: auto; }
+      #navbar.navbar-mobile a { border-radius: .75rem; padding: 12px 20px; }
+    }
+
+    section { padding: 52px 0; }
+    .breadcrumbs {
+      background: transparent;
+      padding: 0 0 18px;
+    }
+    .breadcrumbs .crumb-card {
+      border-radius: 1.25rem;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(31,41,55,.08);
+      padding: 1rem 1.25rem;
+      box-shadow: 0 10px 30px rgba(31,41,55,.06);
+    }
+    .breadcrumbs h2 { font-weight: 800; letter-spacing: -.02em; }
+
+    .publication-hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2rem;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.96), rgba(255,255,255,.84)),
+        radial-gradient(circle at 20% 10%, rgba(47,128,237,.20), transparent 34%),
+        radial-gradient(circle at 92% 30%, rgba(108,99,255,.18), transparent 36%);
+      border: 1px solid rgba(47,128,237,.14);
+      box-shadow: 0 24px 70px rgba(31,41,55,.10);
+    }
+    .publication-hero:after {
+      content: "";
+      position: absolute;
+      inset: 1rem;
+      background-image: radial-gradient(rgba(47,128,237,.20) 1px, transparent 1px);
+      background-size: 22px 22px;
+      opacity: .30;
+      pointer-events: none;
+      mask-image: linear-gradient(90deg, #000 0%, #000 48%, transparent 90%);
+    }
+    .publication-hero > * { position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      color: var(--accent);
+      background: rgba(47,128,237,.10);
+      border: 1px solid rgba(47,128,237,.16);
+      border-radius: 999px;
+      padding: .35rem .7rem;
+      font-weight: 700;
+      font-size: .82rem;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    .publication-hero h1 {
+      font-weight: 800;
+      letter-spacing: -.045em;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: .98;
+    }
+    .hero-copy { max-width: 68ch; color: #465461; font-size: 1.05rem; }
+
+    .pub-stat {
+      height: 100%;
+      border-radius: 1.25rem;
+      padding: 1.15rem;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(31,41,55,.08);
+      box-shadow: 0 12px 30px rgba(31,41,55,.06);
+    }
+    .pub-stat .number { font-size: 1.9rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .pub-stat .label { color: var(--muted); font-size: .88rem; }
+
+    .section-title { padding-bottom: 20px; }
+    .section-title h2 { font-weight: 800; letter-spacing: -.02em; }
+    .section-title p { color: var(--muted); }
+
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      border-radius: 999px;
+      padding: .45rem .75rem;
+      margin: .15rem;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(31,41,55,.08);
+      color: #42505d;
+      font-size: .9rem;
+      box-shadow: 0 8px 18px rgba(31,41,55,.05);
+    }
+
+    .featured-paper {
+      border-radius: 1.5rem;
+      background: linear-gradient(135deg, #14213d, #243b63);
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 20px 55px rgba(20,33,61,.22);
+    }
+    .featured-paper:after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(47,128,237,.25);
+      right: -95px;
+      top: -105px;
+    }
+    .featured-paper > * { position: relative; z-index: 1; }
+    .featured-paper a { color: #fff; text-decoration: underline; text-underline-offset: .18em; }
+    .featured-paper .badge { background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.22); }
+    .featured-paper .text-muted { color: rgba(255,255,255,.74) !important; }
+
+    .publication-card {
+      height: 100%;
+      border: 1px solid rgba(31,41,55,.08);
+      border-radius: 1.35rem;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 14px 35px rgba(31,41,55,.07);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .publication-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 45px rgba(31,41,55,.11);
+      border-color: rgba(47,128,237,.28);
+    }
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(47,128,237,.13), rgba(108,99,255,.12));
+      color: var(--accent);
+      font-size: 1.35rem;
+      flex: 0 0 auto;
+    }
+    .publication-card h4, .featured-paper h3 { font-weight: 800; letter-spacing: -.015em; }
+    .publication-meta { color: var(--muted); font-size: .95rem; }
+    .publication-card .type-label {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .publication-card a.stretched-link-safe { position: relative; z-index: 2; }
+
+    .poster-card {
+      border-radius: 1.35rem;
+      border: 1px solid rgba(31,41,55,.08);
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 14px 35px rgba(31,41,55,.07);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .poster-card:hover { transform: translateY(-3px); box-shadow: 0 18px 45px rgba(31,41,55,.10); }
+
+    .btn-primary { background: var(--accent); border-color: var(--accent); }
+    .btn-primary:hover { background: #1d64c8; border-color: #1d64c8; }
+    .btn-outline-primary { color: var(--accent); border-color: var(--accent); }
+    .btn-outline-primary:hover { background: var(--accent); border-color: var(--accent); }
+
+    #footer { background: #0b0f19; color: #cfd3dc; }
+    #footer .social-links a { color: #cfd3dc; }
   </style>
 </head>
 
 <body>
-  <!-- ======= Header (same as index) ======= -->
-  <header id="header" class="fixed-top shadow-sm">
-    <div class="container d-flex align-items-center justify-content-between">
-
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between gap-3">
       <div class="logo logo-box d-flex align-items-center gap-2">
-        <a href="https://fct.pt/en" class="me-2" aria-label="FCT website"><img src="assets/img/logos/fct.png" alt="FCT" class="img-fluid" style="width:90px"></a>
-        <a href="https://ciencias.ulisboa.pt/en" class="me-2" aria-label="FCUL website"><img src="assets/img/logos/fcul.png" alt="FCUL" class="img-fluid" style="width:90px"></a>
-        <a href="https://www.lasige.pt/" class="me-2" aria-label="LASIGE website"><img src="assets/img/logos/lasige.jpg" alt="LASIGE" class="img-fluid" style="width:70px"></a>
-        <a href="https://liseda-lab.github.io/" aria-label="LiSeDa home"><img src="assets/img/logos/liseda_blue_whiteBK.png" alt="LiSeDa" class="img-fluid" style="width:50px"></a>
+        <a href="https://fct.pt/en" class="me-1" aria-label="FCT website"><img src="assets/img/logos/fct.png" alt="FCT" class="img-fluid" style="width:86px"></a>
+        <a href="https://ciencias.ulisboa.pt/en" class="me-1" aria-label="FCUL website"><img src="assets/img/logos/fcul.png" alt="FCUL" class="img-fluid" style="width:86px"></a>
+        <a href="https://www.lasige.pt/" class="me-1" aria-label="LASIGE website"><img src="assets/img/logos/lasige.jpg" alt="LASIGE" class="img-fluid" style="width:66px"></a>
+        <a href="https://liseda-lab.github.io/" aria-label="LiSeDa home"><img src="assets/img/logos/liseda_blue_whiteBK.png" alt="LiSeDa" class="img-fluid" style="width:48px"></a>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -76,7 +271,7 @@
         <i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
       </nav>
 
-      <div class="header-social-links d-flex align-items-center">
+      <div class="header-social-links d-flex align-items-center gap-2">
         <a href="https://github.com/lbalbi" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
       </div>
     </div>
@@ -87,7 +282,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
       <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="crumb-card d-flex flex-wrap justify-content-between align-items-center gap-2">
           <h2 class="mb-0">Publications</h2>
           <ol class="mb-0">
             <li><a href="index">Home</a></li>
@@ -98,188 +293,242 @@
     </section>
     <!-- End Breadcrumbs -->
 
-    <!-- ======= Publications Section ======= -->
-    <section id="publications" class="services section-bg">
+    <!-- ======= Publications Hero ======= -->
+    <section id="publications-intro" class="pt-2">
       <div class="container">
-        <div class="section-title">
-          <h2>Overview</h2>
-          <p class="mb-0">
-            Browse:
-            &emsp;<i class="bi bi-newspaper"></i> Journal Articles
-            &emsp;<i class="bi bi-people"></i> Conference Papers
-            &emsp;<i class="bi bi-easel"></i> Posters
-            &emsp;&amp;&nbsp;<i class="bi bi-book"></i> Book Chapters
+        <div class="publication-hero">
+          <span class="eyebrow mb-3"><i class="bi bi-journal-richtext"></i> Research output</span>
+          <h1 class="mb-3">Selected publications, papers, and posters</h1>
+          <p class="hero-copy mb-4">
+            A curated list of work across knowledge graphs, neuro-symbolic AI, ontology alignment, biomedical informatics, and machine learning for biological systems.
           </p>
+          <div class="row g-3">
+            <div class="col-6 col-md-3">
+              <div class="pub-stat">
+                <div class="number">4</div>
+                <div class="label">Journal articles &amp; preprints</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="pub-stat">
+                <div class="number">3</div>
+                <div class="label">Conference &amp; workshop papers</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="pub-stat">
+                <div class="number">1</div>
+                <div class="label">Book chapter / proceedings</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="pub-stat">
+                <div class="number">2</div>
+                <div class="label">Poster collections</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Publications Section ======= -->
+    <section id="publications" class="pt-4">
+      <div class="container">
+        <div class="section-title text-center">
+          <h2>Publication list</h2>
+          <p class="mb-3">Browse by output type.</p>
+          <div aria-label="Publication types">
+            <span class="filter-chip"><i class="bi bi-newspaper"></i> Journal Articles</span>
+            <span class="filter-chip"><i class="bi bi-people"></i> Conference Papers</span>
+            <span class="filter-chip"><i class="bi bi-easel"></i> Posters</span>
+            <span class="filter-chip"><i class="bi bi-book"></i> Book Chapters</span>
+          </div>
         </div>
 
-        <!-- Row 1 -->
-        <div class="row mt-3">
+        <article id="featured-paper" class="featured-paper p-4 p-md-5 mb-4">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge rounded-pill">Journal Article</span>
+                <span class="badge rounded-pill">Scientific Reports</span>
+                <span class="badge rounded-pill">2026</span>
+              </div>
+              <h3 class="mb-3"><a href="https://www.nature.com/articles/s41598-026-45458-5">Exploring the limits of pre-trained embeddings in machine-guided protein design: a case study on predicting AAV vector viability</a></h3>
+              <p class="mb-2 text-muted">
+                A. F. Rodrigues, L. Ferraz, <strong>L. Balbi</strong>, P. G. Cotovio, and C. Pesquita
+              </p>
+              <p class="mb-0 text-muted">
+                <em>Scientific Reports</em>, 16, Article 10974 · 2026. DOI: 10.1038/s41598-026-45458-5
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="https://www.nature.com/articles/s41598-026-45458-5" class="btn btn-light" target="_blank" rel="noopener">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Read article
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <div class="row g-4">
           <div class="col-md-6">
-            <div class="icon-box">
-              <table>
-                <tr>
-                  <td class="pe-3"><i class="bi bi-newspaper" aria-hidden="true"></i></td>
-                  <td>
-                    <h4 class="mb-1"><a href="https://arxiv.org/pdf/2510.18929">ECKO: Explainable Clinical Knowledge for Oncology</a></h4>
-                    <p class="mb-0">
-                      M. Contreiras Silva, D. Faria, <strong>L. Balbi</strong>, S. Nunes, A. F. Rodrigues, A. Palkowski,
-                      M. Waleron, E. Daghir-Wojtkowiak, A. Kallor, C. Battail, F. Corazza,
-                      M. Fiorelli, A. Stellato, J. Alfaro, F. Zanzotto, C. Pesquita<br>
-                      <em>arXiv preprint</em> · 2025
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </div>
+            <article class="publication-card p-4">
+              <div class="d-flex gap-3">
+                <div class="card-icon"><i class="bi bi-newspaper" aria-hidden="true"></i></div>
+                <div>
+                  <div class="type-label mb-2">Preprint</div>
+                  <h4 class="h5 mb-2"><a class="stretched-link-safe" href="https://arxiv.org/pdf/2510.18929">ECKO: Explainable Clinical Knowledge for Oncology</a></h4>
+                  <p class="publication-meta mb-0">
+                    M. Contreiras Silva, D. Faria, <strong>L. Balbi</strong>, S. Nunes, A. F. Rodrigues, A. Palkowski, M. Waleron, E. Daghir-Wojtkowiak, A. Kallor, C. Battail, F. Corazza, M. Fiorelli, A. Stellato, J. Alfaro, F. Zanzotto, C. Pesquita<br>
+                    <em>arXiv preprint</em> · 2025
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
 
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <table>
-                <tr>
-                  <td class="pe-3"><i class="bi bi-people" aria-hidden="true"></i></td>
-                  <td>
-                    <h4 class="mb-1"><a href="#">A Semantic Framework for Evaluating Post-hoc Explanations in Link Prediction</a></h4>
-                    <p class="mb-0">
-                      <strong>L. Balbi</strong>, F. Bindt, K. Breitenfelder, R. Campi, J. De Smet, C. d'Amato<br>
-                      XAI-KRKG Workshop @ ECAI 2025 · 2025
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 2 -->
-        <div class="row mt-3">
           <div class="col-md-6">
-            <div class="icon-box">
-              <table>
-                <tr>
-                  <td class="pe-3"><i class="bi bi-book" aria-hidden="true"></i></td>
-                  <td>
-                    <h4 class="mb-1"><a href="https://link.springer.com/book/9783031995538">Neuro-Symbolic AI for Conflict-Aware Learning over Knowledge Graphs</a></h4>
-                    <p class="mb-0">
-                      <strong>L. Balbi</strong><br>
-                      In: <em>Proceedings of the 22nd Extended Semantic Web Conference (ESWC 2025): Satellite Events</em> · 2025
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </div>
+            <article class="publication-card p-4">
+              <div class="d-flex gap-3">
+                <div class="card-icon"><i class="bi bi-people" aria-hidden="true"></i></div>
+                <div>
+                  <div class="type-label mb-2">Workshop paper</div>
+                  <h4 class="h5 mb-2"><a class="stretched-link-safe" href="#">A Semantic Framework for Evaluating Post-hoc Explanations in Link Prediction</a></h4>
+                  <p class="publication-meta mb-0">
+                    <strong>L. Balbi</strong>, F. Bindt, K. Breitenfelder, R. Campi, J. De Smet, C. d'Amato<br>
+                    XAI-KRKG Workshop @ ECAI 2025 · 2025
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
 
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <table>
-                <tr>
-                  <td class="pe-3"><i class="bi bi-people" aria-hidden="true"></i></td>
-                  <td>
-                    <h4 class="mb-1"><a href="https://ceur-ws.org/Vol-3897/oaei2024_paper3.pdf">Results in OAEI 2024 for Matcha</a></h4>
-                    <p class="mb-0">
-                      D. Faria, M. C. Silva, P. Cotovio, L. Ferraz, <strong>L. Balbi</strong>, C. Pesquita<br>
-                      OM @ International Semantic Web Conference · 2024
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 3 -->
-        <div class="row mt-3">
           <div class="col-md-6">
-            <div class="icon-box">
-              <table>
-                <tr>
-                  <td class="pe-3"><i class="bi bi-newspaper" aria-hidden="true"></i></td>
-                  <td>
-                    <h4 class="mb-1"><a href="https://academic.oup.com/database/article/doi/10.1093/database/baae014/7690668">The Immunopeptidomics Ontology (ImPO)</a></h4>
-                    <p class="mb-0">
-                      D. Faria, P. Eugénio, M. C. Silva, <strong>L. Balbi</strong>, C. Pesquita, et&nbsp;al.<br>
-                      <em>Database</em> · 2024
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </div>
+            <article class="publication-card p-4">
+              <div class="d-flex gap-3">
+                <div class="card-icon"><i class="bi bi-book" aria-hidden="true"></i></div>
+                <div>
+                  <div class="type-label mb-2">Book chapter / proceedings</div>
+                  <h4 class="h5 mb-2"><a class="stretched-link-safe" href="https://link.springer.com/book/9783031995538">Neuro-Symbolic AI for Conflict-Aware Learning over Knowledge Graphs</a></h4>
+                  <p class="publication-meta mb-0">
+                    <strong>L. Balbi</strong><br>
+                    In: <em>Proceedings of the 22nd Extended Semantic Web Conference (ESWC 2025): Satellite Events</em> · 2025
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
 
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <table>
-                <tr>
-                  <td class="pe-3"><i class="bi bi-people" aria-hidden="true"></i></td>
-                  <td>
-                    <h4 class="mb-1"><a href="https://ceur-ws.org/Vol-3591/oaei23_paper6.pdf">Results for Matcha and Matcha-DL in OAEI 2023</a></h4>
-                    <p class="mb-0">
-                      D. Faria, M. C. Silva, P. Cotovio, L. Ferraz, <strong>L. Balbi</strong>, C. Pesquita<br>
-                      OM @ International Semantic Web Conference · 2023
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 4 -->
-        <div class="row mt-3">
           <div class="col-md-6">
-            <div class="icon-box">
-              <table>
-                <tr>
-                  <td class="pe-3"><i class="bi bi-newspaper" aria-hidden="true"></i></td>
-                  <td>
-                    <h4 class="mb-1"><a href="https://www.semantic-web-journal.net/content/matcha-dl-tool-supervised-ontology-alignment">Matcha-DL: a tool for supervised ontology alignment</a></h4>
-                    <p class="mb-0">
-                      P. G. Cotovio, L. Ferraz, D. Faria, <strong>L. Balbi</strong>, M. C. Silva, C. Pesquita<br>
-                      <em>Semantic Web Journal</em> · 2024
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </div>
+            <article class="publication-card p-4">
+              <div class="d-flex gap-3">
+                <div class="card-icon"><i class="bi bi-people" aria-hidden="true"></i></div>
+                <div>
+                  <div class="type-label mb-2">Conference paper</div>
+                  <h4 class="h5 mb-2"><a class="stretched-link-safe" href="https://ceur-ws.org/Vol-3897/oaei2024_paper3.pdf">Results in OAEI 2024 for Matcha</a></h4>
+                  <p class="publication-meta mb-0">
+                    D. Faria, M. C. Silva, P. Cotovio, L. Ferraz, <strong>L. Balbi</strong>, C. Pesquita<br>
+                    OM @ International Semantic Web Conference · 2024
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
 
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <table>
-                <tr>
-                  <td class="pe-3"><i class="bi bi-newspaper" aria-hidden="true"></i></td>
-                  <td>
-                    <h4 class="mb-1"><a href="https://www.researchsquare.com/article/rs-4228413/v1">Injecting domain knowledge into graph neural networks for protein-protein interactions</a></h4>
-                    <p class="mb-0">
-                      <strong>L. Balbi</strong>, R. T. Sousa, P. G. Cotovio, C. Pesquita<br>
-                      <em>Research Square</em> · 2024
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </div>
+          <div class="col-md-6">
+            <article class="publication-card p-4">
+              <div class="d-flex gap-3">
+                <div class="card-icon"><i class="bi bi-newspaper" aria-hidden="true"></i></div>
+                <div>
+                  <div class="type-label mb-2">Journal article</div>
+                  <h4 class="h5 mb-2"><a class="stretched-link-safe" href="https://academic.oup.com/database/article/doi/10.1093/database/baae014/7690668">The Immunopeptidomics Ontology (ImPO)</a></h4>
+                  <p class="publication-meta mb-0">
+                    D. Faria, P. Eugénio, M. C. Silva, <strong>L. Balbi</strong>, C. Pesquita, et&nbsp;al.<br>
+                    <em>Database</em> · 2024
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6">
+            <article class="publication-card p-4">
+              <div class="d-flex gap-3">
+                <div class="card-icon"><i class="bi bi-people" aria-hidden="true"></i></div>
+                <div>
+                  <div class="type-label mb-2">Conference paper</div>
+                  <h4 class="h5 mb-2"><a class="stretched-link-safe" href="https://ceur-ws.org/Vol-3591/oaei23_paper6.pdf">Results for Matcha and Matcha-DL in OAEI 2023</a></h4>
+                  <p class="publication-meta mb-0">
+                    D. Faria, M. C. Silva, P. Cotovio, L. Ferraz, <strong>L. Balbi</strong>, C. Pesquita<br>
+                    OM @ International Semantic Web Conference · 2023
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6">
+            <article class="publication-card p-4">
+              <div class="d-flex gap-3">
+                <div class="card-icon"><i class="bi bi-newspaper" aria-hidden="true"></i></div>
+                <div>
+                  <div class="type-label mb-2">Journal article</div>
+                  <h4 class="h5 mb-2"><a class="stretched-link-safe" href="https://www.semantic-web-journal.net/content/matcha-dl-tool-supervised-ontology-alignment">Matcha-DL: a tool for supervised ontology alignment</a></h4>
+                  <p class="publication-meta mb-0">
+                    P. G. Cotovio, L. Ferraz, D. Faria, <strong>L. Balbi</strong>, M. C. Silva, C. Pesquita<br>
+                    <em>Semantic Web Journal</em> · 2024
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6">
+            <article class="publication-card p-4">
+              <div class="d-flex gap-3">
+                <div class="card-icon"><i class="bi bi-newspaper" aria-hidden="true"></i></div>
+                <div>
+                  <div class="type-label mb-2">Preprint</div>
+                  <h4 class="h5 mb-2"><a class="stretched-link-safe" href="https://www.researchsquare.com/article/rs-4228413/v1">Injecting domain knowledge into graph neural networks for protein-protein interactions</a></h4>
+                  <p class="publication-meta mb-0">
+                    <strong>L. Balbi</strong>, R. T. Sousa, P. G. Cotovio, C. Pesquita<br>
+                    <em>Research Square</em> · 2024
+                  </p>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
-
       </div><!-- /container -->
     </section>
     <!-- End Publications Section -->
 
     <!-- ======= Posters quick links ======= -->
-    <section id="posters" class="services section-bg">
+    <section id="posters" class="pt-4">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title text-center">
           <h2>Posters</h2>
-          <p class="mb-2">
-            <a href="PhDPosters.html"><i class="bi bi-easel"></i> Click here to check PhD scientific posters</a>
-          </p>
-          <p class="mb-0">
-            or
-          </p>
-          <p class="mb-0">
-            <a href="MScPosters.html"><i class="bi bi-easel"></i> Here to check MSc scientific posters</a>
-          </p>
+          <p class="mb-0">Scientific poster collections from PhD and MSc work.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-5">
+            <a href="PhDPosters.html" class="poster-card p-4 d-flex align-items-center gap-3 text-decoration-none h-100">
+              <div class="card-icon"><i class="bi bi-easel"></i></div>
+              <div>
+                <h4 class="h5 mb-1 text-dark">PhD scientific posters</h4>
+                <p class="publication-meta mb-0">Browse doctoral research poster materials.</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-5">
+            <a href="MScPosters.html" class="poster-card p-4 d-flex align-items-center gap-3 text-decoration-none h-100">
+              <div class="card-icon"><i class="bi bi-easel"></i></div>
+              <div>
+                <h4 class="h5 mb-1 text-dark">MSc scientific posters</h4>
+                <p class="publication-meta mb-0">Browse master’s research poster materials.</p>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -309,7 +558,6 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    // Year auto-update
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
