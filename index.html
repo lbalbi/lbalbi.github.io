@@ -171,7 +171,6 @@
     .section-title h2 { font-weight: 800; letter-spacing: -.02em; }
     .section-title p { color: var(--muted); }
 
-    .paper-card,
     .research-card,
     .affiliation-card {
       height: 100%;
@@ -181,7 +180,6 @@
       box-shadow: 0 14px 35px rgba(31,41,55,.07);
       transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
     }
-    .paper-card:hover,
     .research-card:hover,
     .affiliation-card:hover {
       transform: translateY(-4px);
@@ -201,26 +199,6 @@
       flex: 0 0 auto;
     }
     .mini-label { color: var(--accent); font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
-    .latest-card {
-      border-radius: 1.5rem;
-      background: linear-gradient(135deg, #14213d, #243b63);
-      color: #fff;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 20px 55px rgba(20,33,61,.22);
-    }
-    .latest-card:after {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: rgba(47,128,237,.25);
-      right: -90px;
-      top: -90px;
-    }
-    .latest-card a { color: #fff; text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .18em; }
-    .latest-card .text-muted { color: rgba(255,255,255,.72) !important; }
 
     .funding-logo { filter: grayscale(18%); opacity: .95; transition: filter .2s, opacity .2s, transform .2s; object-fit: contain; }
     .funding-logo:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-2px); }
@@ -305,12 +283,12 @@
       </div>
     </section>
 
-    <!-- ======= Research Snapshot ======= -->
-    <section id="research-snapshot">
+    <!-- ======= Research Interests ======= -->
+    <section id="research-interests">
       <div class="container">
         <div class="section-title text-center">
-          <h2>Research Snapshot</h2>
-          <p class="mb-0">A compact view of the themes that shape my current work.</p>
+          <h2>Research Interests</h2>
+          <p class="mb-0">Current themes that shape my work.</p>
         </div>
         <div class="row g-4">
           <div class="col-12 col-md-6 col-xl-3">
@@ -339,24 +317,6 @@
               <div class="card-icon mb-3"><i class="bi bi-graph-up-arrow"></i></div>
               <h5 class="fw-bold">Graph-based Neural Methods</h5>
               <p class="mb-0 text-muted small">Exploring neural methods for structured, relational, and biomedical data.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Latest Publication ======= -->
-    <section id="latest" class="py-4 py-md-5">
-      <div class="container">
-        <div class="latest-card p-4 p-md-5">
-          <div class="row align-items-center g-4 position-relative" style="z-index:1;">
-            <div class="col-lg-8">
-              <div class="mini-label text-white-50 mb-2">Latest publication</div>
-              <h3 class="fw-bold mb-2">Exploring the limits of pre-trained embeddings in machine-guided protein design</h3>
-              <p class="mb-0 text-muted">A Scientific Reports article on protein representation learning and AAV vector viability prediction, co-authored with Ana F. Rodrigues, Lucas Ferraz, Pedro Giesteira Cotovio, and Catia Pesquita.</p>
-            </div>
-            <div class="col-lg-4 text-lg-end">
-              <a href="publications#featured-paper" class="btn btn-light"><i class="bi bi-arrow-right-circle me-1"></i> View citation</a>
             </div>
           </div>
         </div>
